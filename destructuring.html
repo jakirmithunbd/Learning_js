@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructing Array & Object</title>
+</head>
+<body>
+    
+    <script>
+        const myObj = {
+            name: 'KeenDevs',
+            launch: 2012,
+            memeber: ['Azizul Haque', 'Suman Ali', 'Rubel Mahmud', 'Jakirul Islam', 'Saddam Hossin', 'Sahabuddin', 'Zoynul Abedin']
+        }
+
+        const { name, launch, memeber } = myObj;
+        console.log(name, launch, memeber);
+
+        const constObject = function(){
+            this.name ='KeenDevs';
+            this.launch = 2012;
+            this.memeber = ['Azizul Haque', 'Suman Ali', 'Rubel Mahmud', 'Jakirul Islam', 'Saddam Hossin', 'Sahabuddin', 'Zoynul Abedin']
+        }
+
+        const obj = new constObject();
+        console.log(obj.name);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOF</title>
+</head>
+<body>
+    <script>
+        function myAge(age) {
+            console.log(age);
+        }
+
+        function callMyName(name, callback){
+            const age = 25;
+            callback(age);
+            console.log('Hello Mr.' + name);
+        }
+
+        console.log(callMyName('Jakir', myAge));
+
+        // return function
+        function counter() {
+            let num = 1;
+
+            return function() {
+                return num++;
+            }
+        }
+
+        const returnResult = counter();
+        console.log(returnResult());
+
+        var welcomeMgs = function (){
+            console.log('Hi');
+        }
+
+        const arrayoffunction = [myAge, welcomeMgs];
+        console.log(arrayoffunction.map(i => i));
+
+        // console.log(typeof welcomeMgs);
+
+
+    </script>
+</body>
+</html>
