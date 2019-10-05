@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array From</title>
+</head>
+<body>
+    <div class="people">
+        <p>Jakir</p>
+        <p>Suman</p>
+        <p>Rubel</p>
+    </div>
+
+    <script>
+
+        // NOTE: Array.from accept 2 arguments
+        
+        // const people = Array.from(document.querySelectorAll('.people p'));
+        // const result = people.map((i) => i.textContent);
+        // console.log(result);
+
+        const people = document.querySelectorAll('.people p');
+        const peoArr = Array.from(people, (item) => {
+            return item.textContent;
+        });
+        // console.log(peoArr);
+
+        /* Array of */
+        const num1 = Array.of(12, 23, 54, 2, 45);
+        console.log(num1);
+
+        /* Arguments in a function */
+
+        // function myNum() {
+        //     const arrNum = Array.from(arguments);
+        //     return arrNum.reduce((total, next, pre) => total, 0);
+        // } 
+
+        // myNum(45,345,54,654,64,65,);
+
+        // const num = [34,34,3,34,5];
+        // num.reduce();
+    </script>
+</body>
+</html>

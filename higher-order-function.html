@@ -41,6 +41,15 @@
 
         // console.log(typeof welcomeMgs);
 
+         // another one 
+		function welcomeMsg(name){
+			console.log(`Welcome Mr. ${name}`);
+			return function(menu){
+				console.log(`What do you like ${menu} ?`);
+			}
+		}
+		welcomeMsg('Jakir')('Fruits juice');
+
 
     </script>
 </body>

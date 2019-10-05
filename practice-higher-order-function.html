@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Higher order function</title>
+</head>
+<body>
+    <script>
+        function printName(age){
+            return age;
+        }
+        function Higher_order_function(name, callbackfunc) {
+            const old = callbackfunc(25);
+            return `${name} is ${old} old`;
+        }
+        console.log(Higher_order_function('Jakir',  printName));
+
+
+        function get_name(name){
+            return function (year) {
+                return (`${name} is ${year} old`);
+            }
+        }
+        console.log(get_name('Jakir')(25));
+
+    </script>
+</body>
+</html>

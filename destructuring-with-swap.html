@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Swapping</title>
+</head>
+<body>
+    <script>
+        var inRing = 'Hulk Hogan';
+        var outRing = 'The Rock';
+
+        var tmp = inRing;
+        inRing = inRing;
+        outRing = tmp;
+
+        console.log(outRing, inRing);
+
+        // Swaping with destructing
+        [inRing, outRing] = [outRing, inRing];
+    </script>
+</body>
+</html>
