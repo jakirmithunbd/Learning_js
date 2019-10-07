@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> JavaScript Object Part2</title>
+</head>
+<body>
+
+<script>
+
+/*
+1. https://medium.freecodecamp.org/demystifying-javascripts-new-keyword-874df126184c
+2. https://www.toptal.com/javascript/javascript-prototypes-scopes-and-performance-what-you-need-to-know 
+3. https://hackernoon.com/prototypes-in-javascript-5bba2990e04b
+*/
+
+
+
+function Foo( name ){
+	this.name = name;
+}
+
+Foo.prototype.getName = function(){
+	return this.name;
+}
+
+function Boo( name, label ){
+	Foo.call(this, name);
+	this.label = label;
+}
+
+// Pre ES6
+Boo.prototype = Object.create(Foo.prototype);
+
+// ES6+
+// Object.setPrototypeOf(Boo.prototype, Foo.prototype);
+
+Boo.prototype.Boolabel = "Boo Label";
+
+
+var a = new Foo('Abc', 'Foo a');
+var b = new Boo('def', 'Boo a');
+console.log(a.name);
+console.log(a.label);
+console.log(a.getName());
+console.log('a prototype', Object.getPrototypeOf(a));
+console.log('b prototype ', Object.getPrototypeOf(b));
+
+
+
+/* constructor function 
+
+RESOURCES:
+------------------------
+http://stackoverflow.com/questions/1592384/adding-prototype-to-javascript-object-literal
+http://jonathancreamer.com/object-literals-and-prototypes-in-javascript/#
+*/
+
+function Students() {
+	this.name 		= "Robin";
+	this.age  		= 19;
+	this.country	= "USA";
+}
+
+Students.prototype.grade = 3.67;
+
+// Students.prototype.getInfo = function() {
+// 	return this.name + " from " + this.country + " age " + this.age;
+// }
+
+Students.prototype = {
+	constructor: Students,
+	grade: 3.68,
+	getInfo: function() {
+		return this.name + " from " + this.country + " age " + this.age;
+	}
+}
+
+var Students = new Students();
+
+console.log(Students.grade);
+
+/* object literal */
+
+
+// var grade = 3.68;
+
+// var Students = {
+// 	name: 'Robin',
+// 	age: 19,
+// 	country: 'USA',
+// 	grade: grade
+// }
+
+// Students.getInfo = function() {
+// 	return Students.name + " from " + Students.country;
+// }
+
+
+
+// console.log(Students.getInfo());
+
+
+
+
+/* FOR IN */
+
+var triangle = { a:1, b:2, c:3}
+
+function ColoredTriangle() {
+	this.color = "red";
+}
+
+ColoredTriangle.prototype = triangle;
+
+var obj = new ColoredTriangle();
+
+for( var prop in obj ){
+	if(obj.hasOwnProperty(prop)) {
+		console.log("obj." + prop + " = " + obj[prop]);
+	}
+}
+
+</script>
+
+</body>
+</html>

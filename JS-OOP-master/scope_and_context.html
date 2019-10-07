@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> JavaScript Scope and Context Understanding </title>
+	</head>
+	<body>
+		<script>
+
+			
+			/*
+
+			Resources: 
+			1. https://blog.kevinchisholm.com/javascript/difference-between-scope-and-context/
+			2. http://blog.kevinchisholm.com/javascript/context-object-literals/
+			3. https://spin.atomicobject.com/2014/10/20/javascript-scope-closures/
+			4. https://scotch.io/tutorials/understanding-scope-in-javascript
+			5. http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/ 
+			6. https://hackernoon.com/execution-context-in-javascript-319dd72e8e2c
+			7. https://codeburst.io/js-demystified-04-execution-context-97dea52c8ac6
+			*/
+
+
+			var cat = {
+ 
+			   name: "Gus",
+			   color: "gray",
+			   age: 15,
+			 
+			   printInfo: function() {
+			      console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); // object context
+			 
+			      nestedFunction = function() {
+			          console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); // loses the context
+			      }
+			 
+			   nestedFunction();
+			   }
+			}
+			cat.printInfo(); 
+
+			//prints 
+			//Name: Gus Color: gray Age: 15 
+			//Name: Color: undefined Age: undefined
+
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JavaScript Variables, Variable Scope, Hoisting</title>
+    </head>
+    <body>
+        
+    <script>
+
+    // 1. http://davidshariff.com/blog/javascript-scope-chain-and-closures/
+
+    
+
+//        // Variables, Variable Scope, Hoisting
+//
+        var fname = 'Suman';
+        var lname = 'Ali';
+        
+        console.log( fname + ' ' + lname);
+        
+        function myVar() {
+            var lname = 'Haque';
+            console.log('Variable from function: ' + lname);
+            console.log('Variable from outside: ' + fname);
+        }
+        
+        myVar();
+//        
+//        
+//        // Declaration & initialization / defination !important
+//        
+//        var x; // Declaration;
+//        
+//        console.log('Value of x: ' + x);
+//        
+//        var y = 7; // initialization 
+//        
+//        console.log( 'Value of y: ' + y);
+//        
+//        
+//        //console.log(this);
+//        
+       // function myLocalThis() {
+       //     console.log(this);
+       // }
+//        
+//        myLocalThis();
+//        
+        
+//            Function Declaration
+//            because of hoisting function declaration can be called before they are declared.
+//            
+//            foo();
+//            function foo() {
+//                console.log('Function Declaration');
+//            }
+//            
+//            Function Expression 
+//            Function Expression can't be called before they are declared.
+//            
+//            console.log(aziz);
+//            
+//            var aziz = function() { // anonymous function expression
+//                return 5;
+//            }
+//            
+//            console.log(bar);
+//            var bar = function mynamedFunc() { // named function expression
+//                console.log('named funciton expression');
+//            }
+//            
+//            bar();
+        
+        
+        
+        
+        
+        // hosting 
+        
+//       var fname = 'Suman';
+//        
+//        if(true) {
+//            var fname = 'Monir';
+//        }
+//        
+//        console.log(fname);
+//        
+//        // hoisting for variables
+//        function myVar() {
+//            console.log(fname);
+//            var fname = 'Azizul';
+//        }
+//        
+//        myVar();
+        
+//         hoisting for functions 
+//        below function isn't hoisted because function is assigned to a variable
+//        foo();
+//        var foo = function() {
+//          alert("Hello!");
+//        };
+//        
+        // another nice example of hoisting 
+        // http://mattsnider.com/variable-hoisting-in-javascript/ 
+        var foo = 1;
+        function bar() {
+            if (!foo) {
+                var foo = 10;
+            }
+            alert(foo);
+        }
+        bar();
+        
+        // function hoisting lexical scope
+        
+        function b() {
+            var myVar;
+            console.log(myVar);
+        }
+        
+        function a() {
+            var myVar = 2;
+            console.log(myVar);
+            b();
+        }
+        
+        var myVar = 1;
+        console.log(myVar);
+        a();
+        
+        
+        // result 1,2,undefined
+        
+        /// SEE BELOW that is DYNAMIC scope
+        
+        function dynamic() {
+            function dynamicb() {
+                console.log(mydVar);
+            }
+            var mydVar = 5;
+            dynamicb();  
+        }
+        
+        var mydVar = 6;
+        dynamic();
+        //dynamicb();
+        
+        // result 5
+        // error: call to undefined function
+        
+        
+        /// SEE BELOW that is referencing outer scope
+        
+        function dynamico() {
+            function dynamicb() {
+                console.log(myoVar);
+            }
+            dynamicb();  
+        }
+        
+        var myoVar = 6;
+        dynamico();
+        
+        // result 6
+        
+        
+    </script>
+        
+    </body>
+</html>
