@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array. find() and .findIndex()</title>
+</head>
+<body>
+    <script>
+        const data = [
+            {
+                name: 'jakir',
+                age: 26,
+                profession: 'web developer',
+            },
+            {
+                name: 'Rubel',
+                age: 26,
+                profession: 'WordPress developer',
+            }
+        ]   
+        
+        const result = data.find((item) => item.name === 'jakir');
+        console.log(result);
+    </script>
+</body>
+</html>
