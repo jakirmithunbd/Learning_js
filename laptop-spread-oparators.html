@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread Oparator</title>
+</head>
+<body>
+    
+<div class="people">
+    <p>Jakir</p>
+    <p>Ayrin</p>
+    <p>Abir</p>
+    <p>Saiful</p>
+</div>
+    
+</body>
+<script>
+    const people = [...document.querySelectorAll('.people p')];
+    // console.log(people);
+
+    const arrInObj = {
+        name: 'jakir',
+        hobby: ['coding', 'sleeping', 'leaining new things']
+    }
+
+
+    const totalList = ['another', 'web developer', ...arrInObj.hobby]; //took array from an object
+    // console.log(totalList);
+
+
+    const comments = [
+
+        {
+            id: 1,
+            text: 'Comment 1'
+        },
+
+        {
+            id: 2,
+            text: 'Comment 2'
+        },
+
+        {
+            id: 3,
+            text: 'Comment 3'
+        },
+    ]
+
+    const idd = 2;
+    const findId = comments.findIndex(comment => comment.id === 2);
+    //console.log(findId); // finding index
+
+    // const newComment = [comments.slice(0, findId), comments.slice(findId + 2)];
+    // console.log(newComment); // return array in object && each object 
+
+    const newComment = [...comments.slice(0, findId), ...comments.slice(findId + 2)];
+    console.log(newComment);
+</script>
+</html>

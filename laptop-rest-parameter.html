@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest Param</title>
+</head>
+<body>
+    <script>
+        function convertCurrent(rate, ...amount) {
+            return amount.map(i => i * rate);
+        }
+
+        // console.log(convertCurrent(2, 50, 5, 10));
+        
+        const team = ['Jakir', 'Suman', 'Rubel', 'dsf', 'df'];
+        const [ownner, assistant, ...other] = team;
+        console.log(ownner, assistant, other);
+    </script>
+</body>
+</html>
