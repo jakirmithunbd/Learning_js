@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+<body>
+    <div id="tweets">tweets</div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script>
+        const Promises = fetch('https://keendevs.com/wp-json/wp/v2/posts');
+        Promises
+        .then( data => data.json() )
+        .then( data => {
+            const id = document.querySelector("#tweets").innerHTML = markup;
+            data.map(item => {
+                const markup = `<p>${item.id}</p>`;
+            });
+        } )
+        .catch((err) => error(err));
+
+
+        // create custom promises
+
+        const CustomPro = new Promise((resolve, reject) => {
+            resolve('This is promises');
+            // reject(Error('error'));
+        });
+
+        CustomPro.then((data) => {
+           
+        });
+
+        // var url = 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?'
+        // + '&screen_name=jakirmithunbd&count=4';
+
+// $.getJSON(
+//     url,
+//     function (data)
+//     {
+//         var tweets = document.getElementById('tweets');
+//         $tweets.empty();
+//         if (data.length !== 0) {
+//             $.each(data, function (i, tweet)
+//             {
+//                 if (tweet.text !== undefined) {
+//                     $tweets.append($('<li></li>', { text: tweet.text }));
+//                 }
+//             });
+//         } else {
+//             $tweets.append($('<li></li>', { text: 'No recent tweets' }));
+//         }
+//     }
+// );
+    </script>
+</body>
+</html>

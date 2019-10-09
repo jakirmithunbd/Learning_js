@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Literals Upgrade</title>
+</head>
+<body>
+    <script>
+        const tshart = {
+            name: 'Jakir',
+            age: 26,
+            details(){
+                return `${this.name} and ${this.age}`;
+            }
+        }
+
+        console.log(tshart.details());
+
+        const arr1 = ['color', 'size', 'weight'];
+        const arr2 = ['red', 'medium', '500mg'];
+
+        const tshartDetails = {
+            [arr1.shift()]: arr2.shift(),
+            [arr1.shift()]: arr2.shift(),
+            [arr1.shift()]: arr2.shift(),
+        }
+
+        console.log(tshartDetails);
+
+    </script>
+</body>
+</html>
