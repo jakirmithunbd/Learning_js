@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Symbol Indentifier</title>
+</head>
+<body>
+    <script>
+        // Symbol is a unique identifier 
+        const name = Symbol("Jakir");
+        const aname = Symbol("Jakir");
+        console.log(name === aname); // false
+
+        const classRoom = {
+            [Symbol('jakir')]: {fname: 'Jakirul', lanme: 'Islam', age: 26},
+            [Symbol('ayrin')]: {fname: 'Sumaiya', lanme: 'Islam', age: 24},
+            [Symbol('jakir')]: {fname: 'Jakirul', lanme: 'Islam', age: 26}
+        }
+
+        const syms = Object.getOwnPropertySymbols(classRoom);
+        const data = syms.map(item => classRoom[item].fname);
+        console.log(data);
+    </script>
+</body>
+</html>
